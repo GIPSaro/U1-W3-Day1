@@ -3,31 +3,98 @@
   prima e gli ultimi 3 della seconda. Converti la stringa risultante in maiuscolo e mostrala con un console.log().
 */
 console.log("Esercizio 1");
+
+let stringa1 = "giorgia";
+let stringa2 = "ipsaro";
+const concatString = (stringa1, stringa2) => {
+  stringa1 = stringa1.slice(0, 2);
+  stringa2 = stringa2.slice(3, 6);
+  let result = stringa1.concat(stringa2);
+  result = result.toUpperCase();
+  return result;
+};
+console.log(concatString(stringa1, stringa2));
+
 /* ESERCIZIO 2 (for)
   Scrivi una funzione che torni un array di 10 elementi; ognuno di essi deve essere un valore random compreso tra 0 e 100 (incluso).
 */
-console.log("esercizio 2");
+console.log("Esercizio 2");
+
+const returnArr = () => {
+  const arr = [];
+  for (let i = 0; i < 10; i++) {
+    arr.push(Math.floor(Math.random() * 101));
+  }
+  return arr;
+};
+console.log(returnArr());
+
 /* ESERCIZIO 3 (filter)
   Scrivi una funzione per ricavare solamente i valori PARI da un array composto da soli valori numerici
 */
-console.log("esercizio 3");
+console.log("Esercizio 3");
+
+let numArray = [7, 18, 9, 73, 61, 88, 47, 16, 2, 56, 99, 34, 57, 2];
+let evenArray = numArray.filter(even);
+
+function even(num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+console.log(evenArray);
+
 /* ESERCIZIO 4 (forEach)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-console.log("esercizio 4");
+console.log("Esercizio 4");
+
+let numeri = [1, 23, 55, 67];
+let sum = 0;
+numeri.forEach((numeri) => {
+  sum += numeri;
+});
+console.log(sum);
+
 /* ESERCIZIO 5 (reduce)
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
-console.log("esercizio 5");
+console.log("Esercizio 5");
+
+let somma = numeri.reduce((acc, val) => {
+  console.log("ACC", acc);
+  console.log("VAL", val);
+  return acc + val;
+});
+console.log(somma);
+
 /* ESERCIZIO 6 (map)
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
-console.log("esercizio 6");
+console.log("Esercizio 6");
+
+let n = 33;
+const increase = (n) => {
+  const increaseArr = numeri.map((numeri) => numeri + n);
+  return increaseArr;
+};
+console.log(increase(n));
+
 /* ESERCIZIO 7 (map)
   Scrivi una funzione che, dato un array di stringhe, ritorni un nuovo array contenente le lunghezze delle rispettive stringhe dell'array di partenza
   es.: ["EPICODE", "is", "great"] => [7, 2, 5]
 */
-console.log("esercizio 7");
+console.log("Esercizio 7");
+
+const stringato = ["EPICODE", "is", "great"];
+const stringLength = (stringato) => {
+  const stringArr = stringato.map((stringato) => stringato.length);
+  return stringArr;
+};
+console.log(stringLength(stringato));
+
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
 */
